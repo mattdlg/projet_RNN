@@ -26,8 +26,11 @@ class RNNcell(torch.nn.Module):
         torch.nn.init.uniform_(self.i2h.weight,-0.001,0.001)
         torch.nn.init.uniform_(self.h2h.weight,-0.001,0.001)
 
-    def init_hidden(self, batch_size):
-        return torch.zeros(batch_size, self.hidden_size) # initial hidden state
+    def init_hidden(self, batch_size, device=None):
+        if device is None:
+            device = next(self.parameters()).device
+        # shape: (num_layers, batch_size, hidden_size)
+        return torch.zeros(self.num_layers, batch_size, self.hidden_size, device=device) # initial hidden state
 
     def forward(self, x, hx=None, batch_first=False, recurrence=True):
         if batch_first:
@@ -38,7 +41,7 @@ class RNNcell(torch.nn.Module):
             seq_len = 1 # if we don't want to use the recurrence, we only feed the RNN one word
 
         if hx is None:
-            hx = self.init_hidden(batch_size)
+            hx = self.init_hidden(batch_size, device=x.device)
         h_t_minus_1 = hx.clone()
         h_t = hx.clone()
         output = []
@@ -107,7 +110,12 @@ class RNN(torch.nn.Module):
         x = self.i2e(x) # word embedding
 
         output, hidden = self.rnn(x, batch_first=True, recurrence=recurrence)
-        output = self.h2o(output[:,-1,:]) # we only keep the output of the last time step
+        """if not recurrence:
+            # we only used a single word, the tensor is in 2D instead of 3D
+            output = output.unsqueeze(1)"""
+        output = self.h2o(hidden[0]) # we only keep the output of the last time step
+        if output.dim() == 1:
+            output = output.unsqueeze(0)
         output = self.softmax(output)
         return output
 
