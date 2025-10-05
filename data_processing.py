@@ -1,7 +1,5 @@
-# Code for the processing of the text dataset 
-import torch.utils.data as data
-from torch.nn.functional import one_hot
-from torch import tensor
+# Code for the processing of the text dataset and the creation of a torch Dataset
+import torch
 
 def load_file(filename):
     """
@@ -24,8 +22,10 @@ def load_file(filename):
         lines = f.readlines()
         for line in lines:
             text, emotion = line.split(sep=";") # each line is composed by a sentence and an associated emotion
-            list_texts.append(text)
-            list_emotions.append(emotion[:-1]) # remove the \n at the end
+            if text == "" or emotion == "":
+                continue # skip empty lines
+            list_texts.append(text.strip()) # remove the spaces at the beginning and at the end of the sentence
+            list_emotions.append(emotion.strip()) # remove the \n at the end
 
     return list_texts, list_emotions
 
@@ -137,7 +137,7 @@ def yield_tokens_with_unknown(tokenized_txt, threshold):
     return new_tokenized_txt
     
 
-class OneHotEncoder(data.Dataset):
+class EmotionsDataset(torch.utils.data.Dataset):
     """
     Class to convert a list of sentences into a one-hot encoded 
     representation used to create a torch Dataset.
@@ -173,15 +173,15 @@ class OneHotEncoder(data.Dataset):
     def one_hot_encoding(self):
         indices = [self.vocab.get(token, self.vocab["<unk>"]) for token in self.tokenized_text] # convert each token into its index in the vocab, if the token is not in the vocab, it is considered as <unk> 
         # (for exemple when we encounter a new work in the validation/test set that was not present in the training set)
-        tensor_indices = tensor(indices)
-        one_hot_encoded = one_hot(tensor_indices, num_classes=self.n_tokens).float()
+        tensor_indices = torch.tensor(indices)
+        one_hot_encoded = torch.nn.functional.one_hot(tensor_indices, num_classes=self.n_tokens).float()
         one_hot_encoded = one_hot_encoded.view(self.nb_sentences, -1, self.n_tokens)
         return one_hot_encoded # return a tensor of shape (n_sentences, sentence_length, n_tokens)
     
     def one_hot_encoding_emotion(self):
         indices = [self.emotion_classes.get(token) for token in self.tokenized_emotion] # convert each emotion into its index in the emotion_classes
-        tensor_indices = tensor(indices)
-        one_hot_encoded = one_hot(tensor_indices, num_classes=len(self.emotion_classes)).float()
+        tensor_indices = torch.tensor(indices)
+        one_hot_encoded = torch.nn.functional.one_hot(tensor_indices, num_classes=len(self.emotion_classes)).float()
         return one_hot_encoded # return a tensor of shape (n_sentences, n_emotion_classes)
 
     def __getitem__(self, index):
@@ -199,17 +199,6 @@ class OneHotEncoder(data.Dataset):
             one-hot encoded version of the emotion at the given index
         """
         return self.one_hot_encoded_texts[index], self.one_hot_encoded_emotions[index]
-
-    def convertToDataset(self): # not needed
-        """
-        Convert the one-hot encoded sentences into a torch Dataset
-        ------
-        Returns:
-            dataset: torch.utils.data.Dataset
-            torch Dataset containing the one-hot encoded sentences
-        """
-        dataset = data.TensorDataset(self.one_hot_encoded_texts, self.one_hot_encoded_emotions) # data, labels
-        return dataset
     
     def __len__(self):
         """
@@ -220,3 +209,5 @@ class OneHotEncoder(data.Dataset):
             number of sentences in the dataset
         """
         return self.nb_sentences
+    
+    
