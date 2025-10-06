@@ -1,7 +1,7 @@
 # Code for the processing of the text dataset and the creation of a torch Dataset
 import torch
 
-def load_file(filename):
+def load_file(filename, sep=";"):
     """
     Open a txt file and separate the content into text and emotion.
     ------
@@ -21,7 +21,7 @@ def load_file(filename):
     with open(filename, mode='r', encoding="utf-8") as f:
         lines = f.readlines()
         for line in lines:
-            text, emotion = line.split(sep=";") # each line is composed by a sentence and an associated emotion
+            text, emotion = line.split(sep=sep) # each line is composed by a sentence and an associated emotion
             if text == "" or emotion == "":
                 continue # skip empty lines
             list_texts.append(text.strip()) # remove the spaces at the beginning and at the end of the sentence
