@@ -267,31 +267,37 @@ def collate_fn(batch,vocab):
     return seqs, labels, lengths
 
 
-def train_epoch(model, loader, optimizer, criterion, device, reccurrence=True):
+def train_epoch(model, loader, optimizer, criterion, device, recurrence=True):
     model.train()
     running_loss = 0.0
     all_preds = []
     all_labels = []
     for batch in loader:
-        lengths = compute_sentence_lengths(batch).to(device)
-        one_hot_ids, labels = batch
-        one_hot_ids = one_hot_ids.to(device)
+        ids, labels, lengths = batch
+        ids = ids.to(device)
         labels = labels.to(device)
+        lengths = lengths.to(device)
 
         optimizer.zero_grad()
 
+        # If labels are one-hot, convert to class indices for loss/metrics
+        if labels.dim() > 1:
+            labels_idx = labels.argmax(dim=1)
+        else:
+            labels_idx = labels
+
         # Compute prediction error
-        logits, _ = model.forward_sequence(one_hot_ids, lengths, reccurrence=reccurrence)
-        loss = criterion(logits, labels)
+        logits, _ = model.forward_sequence(ids, lengths, recurrence=recurrence)
+        loss = criterion(logits, labels_idx)
 
         # Backpropagation
         loss.backward()
         optimizer.step()
 
-        running_loss += loss.item() * one_hot_ids.size(0)
+        running_loss += loss.item() * ids.size(0)
         preds = logits.argmax(dim=1).detach().cpu().numpy()
         all_preds.extend(preds.tolist())
-        all_labels.extend(labels.detach().cpu().numpy().tolist())
+        all_labels.extend(labels_idx.detach().cpu().numpy().tolist())
 
     avg_loss = running_loss / len(loader.dataset)
     acc = accuracy_score(all_labels, all_preds)
@@ -305,19 +311,25 @@ def eval_epoch(model, loader, criterion, device, recurrence=True):
     all_labels = []
     with torch.no_grad():
         for batch in loader:
-            lengths = compute_sentence_lengths(batch).to(device)
-            one_hot_ids, labels = batch
-            one_hot_ids = one_hot_ids.to(device)
+            ids, labels, lengths = batch
+            ids = ids.to(device)
             labels = labels.to(device)
+            lengths = lengths.to(device)
             
+            # If labels are one-hot, convert to class indices for loss/metrics
+            if labels.dim() > 1:
+                labels_idx = labels.argmax(dim=1)
+            else:
+                labels_idx = labels
+
             # Compute prediction error
-            logits, _ = model.forward_sequence(one_hot_ids, lengths, recurrence=recurrence)
-            loss = criterion(logits, labels)
-    
-            running_loss += loss.item() * one_hot_ids.size(0)
+            logits, _ = model.forward_sequence(ids, lengths, recurrence=recurrence)
+            loss = criterion(logits, labels_idx)
+
+            running_loss += loss.item() * ids.size(0)
             preds = logits.argmax(dim=1).detach().cpu().numpy()
             all_preds.extend(preds.tolist())
-            all_labels.extend(labels.detach().cpu().numpy().tolist())
+            all_labels.extend(labels_idx.detach().cpu().numpy().tolist())
 
     avg_loss = running_loss / len(loader.dataset)
     acc = accuracy_score(all_labels, all_preds)
@@ -380,4 +392,36 @@ def plot_confusion(y_true, y_pred, labels):
         for j in range(cm.shape[1]):
             plt.text(j, i, cm[i,j], ha='center', va='center', color='white' if cm[i,j] > cm.max()/2 else 'black')
     plt.tight_layout()
+    plt.show()
+
+def visualize_embeddings_pca_tsne(emb_matrix, itos: dict, top_n: int = 200):
+    """
+    Visualize word embeddings using PCA and t-SNE.
+    ------
+    Parameters:
+        emb_matrix: torch.tensor
+        embedding matrix containing the word embeddings
+        itos: dict
+        dictionary mapping indices to words
+        top_n: int
+        number of top words to visualize (default: 200)
+    """
+    n = min(top_n, emb_matrix.shape[0])
+    X = emb_matrix[:n]
+    pca = PCA(n_components=2)
+    Xp = pca.fit_transform(X)
+    plt.figure(figsize=(8,8))
+    plt.scatter(Xp[:,0], Xp[:,1])
+    for i in range(n):
+        plt.annotate(itos[i], (Xp[i,0], Xp[i,1]), fontsize=7)
+    plt.title("Embeddings PCA")
+    plt.show()
+
+    tsne = TSNE(n_components=2, init='pca', learning_rate='auto', perplexity=30)
+    Xt = tsne.fit_transform(X)
+    plt.figure(figsize=(8,8))
+    plt.scatter(Xt[:,0], Xt[:,1])
+    for i in range(n):
+        plt.annotate(itos[i], (Xt[i,0], Xt[i,1]), fontsize=7)
+    plt.title("Embeddings t-SNE")
     plt.show()
