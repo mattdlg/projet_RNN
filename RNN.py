@@ -143,8 +143,10 @@ class ElmanRNN(torch.nn.Module):
         self.device = device if device is not None else torch.device("cpu")
 
         self.i2e = torch.nn.Linear(self.input_size, self.emb_size)
+        self.h2e = torch.nn.Linear(self.hidden_size, self.emb_size) if self.emb_size != self.hidden_size else torch.nn.Identity()
         self.i2h = torch.nn.Linear(self.emb_size + self.hidden_size, self.hidden_size)
         self.i2o = torch.nn.Linear(self.emb_size + self.hidden_size, self.output_size)
+    
 
         self.activation = torch.tanh
 
@@ -194,7 +196,7 @@ class ElmanRNN(torch.nn.Module):
 
         for t in range(seq_len):
             for layer in range(self.num_layers):
-                input_t = self.i2e(onehot_ids_batch[t]) if layer == 0 else h_t[layer - 1]
+                input_t = self.i2e(onehot_ids_batch[t]) if layer == 0 else self.h2e(h_t[layer - 1])
                 logits_t, h_t[layer] = self.step(input_t, h_t_minus_1[layer])
                 
             all_logits.append(logits_t.unsqueeze(0))  # (1, batch, out)
