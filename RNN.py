@@ -262,6 +262,28 @@ def compute_sentence_lengths(seq, vocab):
     return length if length else len(seq) # if there is no pad, the length of the sentence is the full length
 
 def collate_fn(batch,vocab):
+    """
+    Fonction de collate pour le DataLoader.
+    ------
+    Parameters:
+        batch: list
+            list of tuples (one_hot_encoded_sentence, one_hot_encoded_emotion)
+            where one_hot_encoded_sentence is a tensor of shape 
+            (sentence_length, n_tokens) and one_hot_encoded_emotion is a tensor of shape
+            (n_emotion_classes,)
+        vocab: dict
+            dictionnary associating an integer to each token.
+    ------
+    Returns:
+        seqs: torch.Tensor
+            tensor of shape (batch_size, sentence_length, n_tokens)
+            containing the one-hot encoded sentences in the batch
+        labels: torch.Tensor
+            tensor of shape (batch_size, n_emotion_classes)
+            containing the one-hot encoded emotions in the batch
+        lengths: torch.LongTensor
+            tensor of shape (batch_size,) containing the lengths of each sentence in the batch
+    """
     seqs, labels = zip(*batch)
     lengths = torch.tensor([compute_sentence_lengths(seq, vocab) for seq in seqs], dtype=torch.long)
     seqs = torch.stack(seqs)
