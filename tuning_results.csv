@@ -1,0 +1,97 @@
+emb_size,hidden_size,rnn_layers,appearance_threshold,size_threshold,batch_size,lr,best_val_acc,epoch_of_best,time_s,status,best_path
+128,128,2,3,25,64,0.0005,0.8968935888962326,10.0,596.0301434993744,ok,best_elman_rnn_trial_30.pt
+128,128,1,1,25,64,0.0005,0.8955717118307998,12.0,867.7910571098328,ok,best_elman_rnn_trial_6.pt
+128,128,1,3,25,128,0.0005,0.8955717118307998,17.0,396.460574388504,ok,best_elman_rnn_trial_16.pt
+128,256,1,1,20,128,0.0005,0.8954041204437401,15.0,480.40043663978577,ok,best_elman_rnn_trial_52.pt
+128,128,1,3,25,64,0.0005,0.8949107732980833,8.0,647.103376865387,ok,best_elman_rnn_trial_14.pt
+128,128,1,1,20,64,0.0005,0.8938193343898574,6.0,392.2761573791504,ok,best_elman_rnn_trial_2.pt
+128,256,1,1,20,128,0.001,0.893026941362916,8.0,347.12344908714294,ok,best_elman_rnn_trial_51.pt
+128,256,1,3,25,128,0.0005,0.891606080634501,9.0,506.75408482551575,ok,best_elman_rnn_trial_64.pt
+128,128,2,3,20,64,0.0005,0.8914421553090333,9.0,386.88375520706177,ok,best_elman_rnn_trial_26.pt
+128,128,2,1,20,64,0.0005,0.8914421553090333,9.0,418.09074783325195,ok,best_elman_rnn_trial_18.pt
+128,256,1,1,20,64,0.0005,0.8914421553090333,15.0,739.0625834465027,ok,best_elman_rnn_trial_50.pt
+128,256,1,3,20,64,0.0005,0.8914421553090333,13.0,576.4711647033691,ok,best_elman_rnn_trial_58.pt
+128,128,1,3,25,128,0.001,0.8909451421017845,8.0,299.9253969192505,ok,best_elman_rnn_trial_15.pt
+128,128,2,3,20,128,0.001,0.8890649762282092,6.0,197.5470085144043,ok,best_elman_rnn_trial_27.pt
+128,128,1,3,20,64,0.0005,0.8890649762282092,17.0,656.1864559650421,ok,best_elman_rnn_trial_10.pt
+128,128,3,3,25,64,0.0005,0.8883013879709187,7.0,954.5149114131927,ok,best_elman_rnn_trial_46.pt
+128,128,1,3,20,128,0.0005,0.8882725832012678,14.0,476.26208424568176,ok,best_elman_rnn_trial_12.pt
+128,128,1,3,20,64,0.001,0.8882725832012678,6.0,344.8689217567444,ok,best_elman_rnn_trial_9.pt
+128,256,1,3,20,128,0.0005,0.8882725832012678,10.0,353.9220218658447,ok,best_elman_rnn_trial_60.pt
+128,128,3,3,20,128,0.0005,0.8882725832012678,8.0,453.9285192489624,ok,best_elman_rnn_trial_44.pt
+128,128,3,3,20,64,0.0005,0.8882725832012678,11.0,837.5142543315887,ok,best_elman_rnn_trial_42.pt
+128,128,2,3,20,128,0.0005,0.8866877971473851,12.0,305.928861618042,ok,best_elman_rnn_trial_28.pt
+128,128,2,3,25,128,0.0005,0.8863185723727693,9.0,392.6015830039978,ok,best_elman_rnn_trial_32.pt
+128,128,2,3,25,64,0.001,0.8849966953073364,10.0,637.0845913887024,ok,best_elman_rnn_trial_29.pt
+128,128,3,1,25,128,0.0005,0.8849966953073364,10.0,504.2720890045166,ok,best_elman_rnn_trial_40.pt
+128,128,2,3,25,128,0.001,0.88433575677462,6.0,286.50731778144836,ok,best_elman_rnn_trial_31.pt
+128,128,3,3,20,128,0.001,0.884310618066561,11.0,565.4530549049377,ok,best_elman_rnn_trial_43.pt
+128,128,1,1,20,128,0.0005,0.884310618066561,16.0,540.1285810470581,ok,best_elman_rnn_trial_4.pt
+128,256,1,3,25,64,0.0005,0.8836748182419035,10.0,704.8374865055084,ok,best_elman_rnn_trial_62.pt
+128,256,1,1,25,128,0.0005,0.8836748182419035,19.0,748.2812254428864,ok,best_elman_rnn_trial_56.pt
+128,128,1,1,20,64,0.001,0.8811410459587956,7.0,428.6220898628235,ok,best_elman_rnn_trial_1.pt
+128,128,1,3,20,128,0.001,0.8811410459587956,8.0,333.5080552101135,ok,best_elman_rnn_trial_11.pt
+128,128,1,1,25,128,0.0005,0.8810310641110377,16.0,722.8906140327454,ok,best_elman_rnn_trial_8.pt
+128,128,1,1,25,128,0.001,0.8803701255783212,7.0,447.5099868774414,ok,best_elman_rnn_trial_7.pt
+128,256,1,3,20,128,0.001,0.8803486529318542,4.0,218.04437375068665,ok,best_elman_rnn_trial_59.pt
+128,128,2,1,20,128,0.001,0.8795562599049128,4.0,172.71485662460327,ok,best_elman_rnn_trial_19.pt
+128,128,3,3,25,128,0.0005,0.8790482485128883,17.0,866.4242300987244,ok,best_elman_rnn_trial_48.pt
+128,256,1,1,25,64,0.0005,0.8790482485128883,8.0,667.7498338222504,ok,best_elman_rnn_trial_54.pt
+128,128,2,1,25,64,0.0005,0.8790482485128883,7.0,490.83958625793457,ok,best_elman_rnn_trial_22.pt
+128,128,3,1,20,64,0.0005,0.8771790808240888,10.0,545.3919286727905,ok,best_elman_rnn_trial_34.pt
+128,128,2,1,20,128,0.0005,0.8771790808240888,10.0,290.4519844055176,ok,best_elman_rnn_trial_20.pt
+128,128,3,3,25,64,0.001,0.8770654329147389,5.0,770.6285798549652,ok,best_elman_rnn_trial_45.pt
+128,256,1,3,25,128,0.001,0.8764044943820225,8.0,475.7472059726715,ok,best_elman_rnn_trial_63.pt
+128,128,3,1,25,64,0.0005,0.8764044943820225,14.0,979.3011660575867,ok,best_elman_rnn_trial_38.pt
+128,128,3,1,20,64,0.001,0.8740095087163233,7.0,456.02376675605774,ok,best_elman_rnn_trial_33.pt
+128,128,1,3,25,64,0.001,0.8737607402511567,6.0,542.7964453697205,ok,best_elman_rnn_trial_13.pt
+128,128,2,1,20,64,0.001,0.873217115689382,11.0,477.8437750339508,ok,best_elman_rnn_trial_17.pt
+128,128,3,3,25,128,0.001,0.8724388631857237,7.0,579.8454942703247,ok,best_elman_rnn_trial_47.pt
+128,128,3,1,25,128,0.001,0.8724388631857237,12.0,467.7992868423462,ok,best_elman_rnn_trial_39.pt
+128,128,2,3,20,64,0.001,0.8724247226624405,5.0,309.3214032649994,ok,best_elman_rnn_trial_25.pt
+128,128,1,1,20,128,0.001,0.8724247226624405,9.0,378.7788326740265,ok,best_elman_rnn_trial_3.pt
+128,128,2,1,25,128,0.0005,0.8717779246530073,10.0,445.6331510543823,ok,best_elman_rnn_trial_24.pt
+128,128,3,3,20,64,0.001,0.8716323296354992,3.0,406.7229034900665,ok,best_elman_rnn_trial_41.pt
+128,128,2,1,25,64,0.001,0.8704560475875743,6.0,485.69896388053894,ok,best_elman_rnn_trial_21.pt
+128,128,3,1,25,64,0.001,0.8684732319894249,6.0,610.8939120769501,ok,best_elman_rnn_trial_37.pt
+128,128,2,1,25,128,0.001,0.8678122934567085,9.0,411.3885111808777,ok,best_elman_rnn_trial_23.pt
+128,128,3,1,20,128,0.001,0.8676703645007924,6.0,247.40265941619873,ok,best_elman_rnn_trial_35.pt
+128,256,1,3,25,64,0.001,0.8664904163912757,4.0,432.0772211551666,ok,best_elman_rnn_trial_61.pt
+128,256,1,1,20,64,0.001,0.8660855784469097,5.0,351.2777769565582,ok,best_elman_rnn_trial_49.pt
+128,256,1,3,20,64,0.001,0.8645007923930269,5.0,324.55594182014465,ok,best_elman_rnn_trial_57.pt
+128,256,1,1,25,128,0.001,0.8631857237276933,6.0,418.42137598991394,ok,best_elman_rnn_trial_55.pt
+128,128,3,1,20,128,0.0005,0.8621236133122029,6.0,262.79513239860535,ok,best_elman_rnn_trial_36.pt
+128,128,1,1,25,64,0.001,0.8578982154659617,10.0,802.2300801277161,ok,best_elman_rnn_trial_5.pt
+128,256,1,1,25,64,0.001,0.8512888301387971,8.0,670.5793325901031,ok,best_elman_rnn_trial_53.pt
+128,256,2,1,20,64,0.001,,,4.232684373855591,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 40; expected version 39 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,1,20,64,0.0005,,,4.3800060749053955,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 40; expected version 39 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,1,20,128,0.001,,,3.9299674034118652,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 40; expected version 39 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,1,20,128,0.0005,,,4.126853942871094,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 40; expected version 39 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,1,25,64,0.001,,,7.491594076156616,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 50; expected version 49 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,1,25,64,0.0005,,,7.754172325134277,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 50; expected version 49 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,1,25,128,0.001,,,7.8206787109375,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 50; expected version 49 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,1,25,128,0.0005,,,7.680957078933716,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 50; expected version 49 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,3,20,64,0.001,,,2.95023512840271,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 40; expected version 39 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,3,20,64,0.0005,,,3.20646595954895,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 40; expected version 39 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,3,20,128,0.001,,,2.713325262069702,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 40; expected version 39 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,3,20,128,0.0005,,,2.7607905864715576,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 40; expected version 39 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,3,25,64,0.001,,,4.302086353302002,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 50; expected version 49 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,3,25,64,0.0005,,,4.491699934005737,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 50; expected version 49 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,3,25,128,0.001,,,4.546159982681274,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 50; expected version 49 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,2,3,25,128,0.0005,,,4.838862895965576,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 50; expected version 49 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,1,20,64,0.001,,,3.874767541885376,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 60; expected version 59 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,1,20,64,0.0005,,,4.048825263977051,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 60; expected version 59 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,1,20,128,0.001,,,4.380690097808838,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 60; expected version 59 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,1,20,128,0.0005,,,4.141270160675049,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 60; expected version 59 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,1,25,64,0.001,,,7.679758310317993,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 75; expected version 74 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,1,25,64,0.0005,,,7.747824668884277,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 75; expected version 74 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,1,25,128,0.001,,,7.78672456741333,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 75; expected version 74 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,1,25,128,0.0005,,,8.163130521774292,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 75; expected version 74 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,3,20,64,0.001,,,3.0752294063568115,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 60; expected version 59 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,3,20,64,0.0005,,,2.7605066299438477,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 60; expected version 59 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,3,20,128,0.001,,,2.8232266902923584,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 60; expected version 59 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,3,20,128,0.0005,,,3.1713435649871826,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 60; expected version 59 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,3,25,64,0.001,,,4.4146692752838135,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 75; expected version 74 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,3,25,64,0.0005,,,4.649184226989746,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [64, 256]], which is output 0 of AsStridedBackward0, is at version 75; expected version 74 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,3,25,128,0.001,,,4.814734220504761,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 75; expected version 74 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
+128,256,3,3,25,128,0.0005,,,4.764921426773071,"error: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [128, 256]], which is output 0 of AsStridedBackward0, is at version 75; expected version 74 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).",
